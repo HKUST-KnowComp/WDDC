@@ -1,0 +1,5 @@
+tqdm
+scikit-learn
+numpy
+flair==0.6.1
+transformers==3.3.1

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="85b957ed-fbe5-45da-b8fd-2ff1e2233be4" name="SCUTServer">
+        <fileTransfer rootFolder="/home/wmni/" accessType="SFTP" host="202.38.247.55" port="22" sshConfigId="f7c46606-db9a-4417-b037-4037e2e1e157" sshConfig="wmni@202.38.247.55:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
