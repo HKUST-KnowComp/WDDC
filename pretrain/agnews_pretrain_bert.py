@@ -27,9 +27,9 @@ parser.add_argument('--eval_chunk_size', type=int, default=5000,
                     help='size of chunk when evaluate')
 
 
-parser.add_argument('--save_dir', type=str, default="../data/agnews_bert/saved_model",
+parser.add_argument('--save_dir', type=str, default="../saved_model/agnews_bert",
                     help='path to model saving directory')
-parser.add_argument('--data_dir', type=str, default="../data/agnews_bert/",
+parser.add_argument('--data_dir', type=str, default="../data/agnews_bert",
                     help='path to data directory')
 parser.add_argument('--log_dir', type=str, default="../log/agnews_bert",
                     help='path to log directory')

@@ -189,14 +189,14 @@ def train(args):
         model.load_state_dict(model_dict)
 
 
-        dev_precision, dev_recall, dev_f1_macro, dev_f1_micro, dev_accuracy, dev_golden, dev_pred = evaluate(args, 'dev', asp_word2idx, model, device, dev_dataloader, True)
+        # dev_precision, dev_recall, dev_f1_macro, dev_f1_micro, dev_accuracy, dev_golden, dev_pred = evaluate(args, 'dev', asp_word2idx, model, device, dev_dataloader, True)
         # test_precision, test_recall, test_f1_macro, test_f1_micro, test_accuracy, test_golden, test_pred = evaluate(args, 'test', asp_word2idx, model, device, test_dataloader, True)
 
 
-        print('Pretrain Result')
+        # print('Pretrain Result')
         
-        print('Dev\n')
-        print('Precision {:.5f}, Recall {:.5f}, Micro F1 {:.5f}, Macro F1 {:.5f}, ACC {:.5f} \n'.format(dev_precision, dev_recall, dev_f1_micro, dev_f1_macro, dev_accuracy))
+        # print('Dev\n')
+        # print('Precision {:.5f}, Recall {:.5f}, Micro F1 {:.5f}, Macro F1 {:.5f}, ACC {:.5f} \n'.format(dev_precision, dev_recall, dev_f1_micro, dev_f1_macro, dev_accuracy))
 
         # result_analysis(args,'dev',dev_pred,dev_golden)
         # print('Test\n')
@@ -307,22 +307,6 @@ def train(args):
             for param_group in optimizer.param_groups:
                 param_group['lr'] = lr
 
-    # if args.verbose:
-    #     print('alpha {:.2f} beta {:.2f} gamma_positive {:.2f} gamma_negative {:.2f}'.format(args.alpha, args.beta, args.gamma_positive, args.gamma_negative))
-    #     print('dataset {}'.format(args.data_dir))
-    #     print('unsupervised {}'.format(args.unsupervised))
-    #     print('num_filters {} max_len {} emb_dim {} emb_trainable {}'.format(args.num_filters, args.max_len, args.emb_dim, args.emb_trainable))
-    #     print('score_scale {} num_senti {} num_neg {}'.format(args.score_scale, args.num_senti, args.num_neg))
-    #     print('num_epochs {}'.format(args.num_epochs))
-
-    #     print('Best Epoch at {:2}'.format(best_epoch))
-    #     print('Best Global Step at {:2}'.format(best_global_step))
-    #     print('Dev\n')
-    #     print('Precision {:.5f}, Recall {:.5f}, Micro F1 {:.5f}, Macro F1 {:.5f}, ACC {:.5f} \n'.format(best_dev_precision, best_dev_recall, best_dev_f1_micro, best_dev_f1_macro, best_dev_accuracy))
-
-    #     print('Test\n')
-    #     print('Precision {:.5f}, Recall {:.5f}, Micro F1 {:.5f}, Macro F1 {:.5f}, ACC {:.5f} \n'.format(best_test_precision, best_test_recall, best_test_f1_micro, best_test_f1_macro, best_test_accuracy)) 
-
     if args.unsupervised:
         filename = os.path.join(args.save_dir, "model_vws_{}.pt".format(time_stamp))
     else:
@@ -336,18 +320,6 @@ def train(args):
 
     best_dev_precision, best_dev_recall, best_dev_f1_macro, best_dev_f1_micro, best_dev_accuracy = dev_precision, dev_recall, dev_f1_macro, dev_f1_micro, dev_accuracy
     best_test_precision, best_test_recall, best_test_f1_macro, best_test_f1_micro, best_test_accuracy = test_precision, test_recall, test_f1_macro, test_f1_micro, test_accuracy 
-
-    # result_analysis(args,'dev',dev_pred,dev_golden)
-    # result_analysis(args,'test',test_pred,test_golden)
-
-    # os.system("rm {}".format(file_name))
-    # keyword_emb = model.keyword_emb.detach().cpu().numpy()
-    # weight = model.W.detach().cpu().numpy()
-    # sigmoid_value = torch.sigmoid(torch.matmul(model.keyword_emb,model.W)).detach().cpu().numpy()
-    
-    # np.save(open(join(self.log_dir,'keyword_emb'),'wb'),keyword_emb)
-    # np.save(open(join(self.log_dir,'weight'),'wb'),weight)
-    # np.save(open(join(self.log_dir,'sigmoid_value'),'wb'),sigmoid_value)
 
     print('alpha {:.2f} beta {:.2f} gamma_positive {:.2f} gamma_negative {:.2f}'.format(args.alpha, args.beta, args.gamma_positive, args.gamma_negative))
     print('dataset {} train {} dev {} test {}'.format(args.data_dir, args.train, args.dev, args.test))

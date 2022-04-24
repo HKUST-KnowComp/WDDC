@@ -21,7 +21,7 @@ parser.add_argument('--num_chunk', type=int, default=2,
 parser.add_argument('--eval_chunk_size', type=int, default=5000,
                     help='size of chunk when evaluate')
 
-parser.add_argument('--save_dir', type=str, default="./data/agnews_extract",
+parser.add_argument('--save_dir', type=str, default="./saved_model/agnews_extract",
                     help='path to model saving directory')
 parser.add_argument('--data_dir', type=str, default="./data/agnews_extract",
                     help='path to data directory')
@@ -29,7 +29,7 @@ parser.add_argument('--esa_dir', type=str, default="./data/agnews_extract",
                     help='path to data directory')
 parser.add_argument('--esa_file', type=str, default="small_train_esa_similarity.npy",
                     help='path to data directory')
-parser.add_argument('--log_dir', type=str, default=".log/agnews_extract/",
+parser.add_argument('--log_dir', type=str, default=".log/agnews_extract",
                     help='path to log directory')
 parser.add_argument('--log_file', type=str, default="hyper_params.txt",
                     help='file to record f1 score')
