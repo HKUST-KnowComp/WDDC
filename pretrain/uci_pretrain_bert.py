@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser(description='VWS')
 
 parser.add_argument('--unsupervised', type=bool, default=False,
                     help='whether train model unsupervisedly')
-parser.add_argument('--lm_name', type=str, default="bert-base-uncased",
+parser.add_argument('--lm_name', type=str, default="bert-base-cased",
                     help='pre-trained language model')
 
 parser.add_argument('--train', type=str, default="pseudo_train",
